@@ -52,6 +52,7 @@ class Tilt extends React.Component {
 
   render() {
     return (
+    // to manipulate DOM you need a ref, you will get a ref to DOM node
       <div ref={node => (this.rootNode = node)} className="tilt-root">
         <div className="tilt-child">
           <div {...this.props} />

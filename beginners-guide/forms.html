@@ -1,0 +1,68 @@
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<script src="https://unpkg.com/vanilla-tilt@1.4.1/dist/vanilla-tilt.min.js"></script>
+<script type="text/babel">
+  class Name extends React.Component {
+    state= {error : this.props.getErrorMessage('')}
+    handleSubmit = event => {
+      event.preventDefault()
+      {/* console.log({target: event.target})
+      console.log(event.target[0].value)
+      console.log(event.target.elements.username.value)
+      console.log(this.inputNode.value) */}
+      const value = event.target.elements.username.value
+      const error = this.props.getErrorMessage(value)
+      if (error) {
+        alert(`error: ${error}`)
+      } else {
+        alert(`success: ${value}`)
+      }
+    }
+
+    handleChange = (event) => {
+      const {value} = event.target
+      this.setState({
+        error: this.props.getErrorMessage(value)
+      })
+
+    }
+
+    /*componentDidMount() {
+      this.setState({
+        error: this.props.getErrorMessage('value')
+      })
+    }*/
+
+    render () {
+      const {error} = this.state
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" name="username" ref={node => this.inputNode = node} onChange = {this.handleChange}/>
+          </label>
+          {error ? <div style={{color: 'red'}}>{error}</div> : null}
+          <button disabled = {Boolean(error)} type="submit">Submit</button>
+        </form>
+      )
+
+    }
+  }
+
+  ReactDOM.render(
+    <Name getErrorMessage= {value => {
+      if (value.length < 3) {
+        return `value must be > 3 chars`
+      }
+      if (!value.includes('s')) {
+        return `value doesn't include "s"`
+      }
+      return null
+
+    }}/>,
+    document.getElementById('root')
+  )
+
+</script>
