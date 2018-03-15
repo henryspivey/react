@@ -1,0 +1,71 @@
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.0.0-rc.3/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0-rc.3/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<script src="https://unpkg.com/prop-types@15.6.0/prop-types.js"></script>
+
+<script type="text/babel">
+  const rootELement = document.getElementById('root');
+  // const element = document.createElement('div');
+  // element.textContent = "Hello World";
+  // element.className = 'container';
+  // rootELement.appendChild(element);
+  // const element = React.createElement('div', {className: 'container'}, 'Hello World', 'Goodbye World');
+  // object to create with properties
+  // console.log(element)
+  const content = "Hello World"
+  const myClass = "container"
+  const props = {
+    className: 'container',
+    children: 'Hello World2'
+  }
+  const element = <div className={myClass + '__hi-there'}>{content}</div> 
+  // JSX: write UI with HTML like syntax
+  // Syntax, start with '<', then properties, can be self closing if you don't want to pass anything
+  // interpolation {} enters JS land from JSX land, can do anything javascript can do
+  // {(() => content) ()} 
+  ReactDOM.render(element, rootELement);
+
+  const newElement = (
+    <div {...props} className="my-class" /> // order matters, if place before it is conditional
+
+  )
+  ReactDOM.render(newElement, rootELement);
+
+
+  // creating react components
+  const message = (props) => <div>{props.msg}</div>
+  const MessageComponent = message
+  const element2 = (
+    <div className = "container">
+
+      {message({msg: 'Hello World'})}
+      {message({msg: 'Goodbye World'})}
+
+      // also works in JSX land      
+      {React.createElement(message, {msg: 'Hello World'})}
+      {React.createElement(message, {msg: 'Goodbye World'})}
+
+      // variable is referenced when you capitalize
+      <MessageComponent msg="Hello World"/>
+      <MessageComponent msg="Goodbye World"/>
+    </div>
+  )
+
+
+  ReactDOM.render(element2, rootELement);
+
+  function Message({message}) {
+    if (!message) {
+      return React.createElement('div', null, 'No Message')
+    }
+    return React.createElement('div', null, message)
+  }
+
+  ReactDOM.render(
+    <Message message={'hi'} />,
+    document.getElementById('root'),
+  )
+
+</script>
+

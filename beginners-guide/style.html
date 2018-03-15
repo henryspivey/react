@@ -1,0 +1,57 @@
+<script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/prop-types@15.6.0/prop-types.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<div id="root"></div>
+<style type="text/css">
+  
+  .box {
+    border: 1px solid black;
+    height: 120px;
+  }
+  .box--small {
+    width: 60px;
+    height: 60px;
+  }
+
+  .box--medium {
+    width: 80px;
+    height: 80px;
+  }
+
+  .box--large {
+    width: 100px;
+    height: 100px;
+  }
+
+</style>
+<script type="text/babel">
+  const rootElement = document.getElementById('root')
+  const props = {
+    className: 'box',
+    style: {paddingLeft: 20}
+  }
+  function Box({style, size, className,...rest}) {
+    const sizeClassName = size ? `box--${size}` : ''
+    return (
+      <div className={`box ${className} ${sizeClassName}`} style={{paddingLeft: 20, ...style}} {...rest} />      
+    )
+  }
+
+  const element = (
+    <div>
+      <Box size="small" style={{backgroundColor: "red"}}>small box</Box>
+    
+
+   
+      <Box size="medium" style={{backgroundColor: "orange"}}>medium box</Box>
+   
+
+  
+      <Box size="large" style={{backgroundColor: "lightblue"}}>large box</Box>
+    </div>
+  )
+
+  ReactDOM.render(element, rootElement)
+
+</script>
