@@ -14,27 +14,47 @@
       'pear',
       'peach'
     ]
-
+    state = {multiline: '', commaSeparated: '', multiselect: []}
     handleCommaSeparatedChange = event => {
+      const {value} = event.target
+      const allvals = value.split(',').map(v=>v.trim()).filter(Boolean)
       console.log('handleCommaSeparatedChanged')
+      this.setState({
+        commaSeparated: value,
+        multiline : allvals.join('\n'),
+        multiselect : allvals.filter(v => MyFancyForm.availableOptions.includes(v))
+      })
     }
 
     handleMultilineChange = event => {
-      console.log('handleMultilineChange')
+      const {value} = event.target
+      const allvals = value.split(',').map(v=>v.trim()).filter(Boolean)
+      this.setState({
+        multiline : value,
+        commaSeparated: allvals.join(','),
+        multiselect: allvals.filter(v => MyFancyForm.availableOptions.includes(v))
+
+      })
     }
 
     handleMultiSelectChange = event => {
-      console.log('handleMultiSelectChanged')
+      const allvals = Array.from(event.target.selectedOptions).map(o => o.value)
+      this.setState({
+        multiselect: allvals,
+        multiline: allvals.join('\n'),
+        commaSeparated: allvals.join(',')
+      })
     }
 
     render() {
+      const {commaSeparated, multiline, multiselect} = this.state
       return (
         <form>
           <div>
             <label>
               comma separated values:
               <br />
-              <input type="text" onChange={this.handleCommaSeparatedChange}/>
+              <input type="text" onChange={this.handleCommaSeparatedChange} value={commaSeparated}/>
             </label>
           </div>
 
@@ -42,7 +62,7 @@
             <label>
               multiline values:
               <br />
-              <textarea rows={MyFancyForm.availableOptions.length} onChange={this.handleCommaSeparatedChange}></textarea>
+              <textarea value = {multiline} rows={MyFancyForm.availableOptions.length} onChange={this.handleCommaSeparatedChange}></textarea>
             </label>
           </div>
 
@@ -52,7 +72,7 @@
               <br />
               <select
                 multiple
-                
+                value = {multiselect}
                 size={
                   MyFancyForm.availableOptions
                     .length
