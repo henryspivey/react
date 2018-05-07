@@ -10,6 +10,9 @@
   <body>
     <div id="root"></div>
     <div id="time"></div>
+    <div id="link"></div>
+    <div id="toggle"></div>
+    <div id="logging"></div>    
     <script type="text/babel">
 
       ReactDOM.render(
@@ -49,12 +52,30 @@
 
 
       class Clock extends React.Component {
-
+        //2.
         constructor(props) {
           super(props);
           this.state = {date: new Date()}
         }
+        // The componentDidMount() hook runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
+        // 4.
+        componentDidMount() {
+          this.timerID = setInterval(
+            () => this.tick(),
+            1000
+          );
+        }
 
+        componentWillUnmount() {
+          clearInterval(this.timerID);
+        }
+        // 5.
+        tick() {
+          this.setState({
+            date: new Date()
+          });
+        }
+        // 3.
         render() {
           return (
             <div>
@@ -64,13 +85,13 @@
         }
 
       }
-
+      // 1.
       ReactDOM.render(<Clock/>, document.getElementById('time'));
-
-      function tick() {
-        
-        ReactDOM.render(<Clock date = {new Date()}/>, document.getElementById('time'));
-      }
+      //
+      // function tick() {
+      //
+      //   ReactDOM.render(<Clock date = {new Date()}/>, document.getElementById('time'));
+      // }
 
       // setInterval(tick, 1000);
 
@@ -83,7 +104,7 @@
         render() {
           return <h1>Hello, {this.props.name}</h1>;
         }
-      }            
+      }
       const welcome = <Welcome name="Henry" />;
       ReactDOM.render(welcome, document.getElementById('root'));
 
@@ -103,7 +124,71 @@
       )
 
 
+      // Link component
+      function ActionLink() {
+        function handleClick(e) {
+          e.preventDefault();
+          console.log("The link was clicked");
+        }
 
+        return (
+          <a href="#" onClick={handleClick}>Click Me</a>
+        );
+      }
+
+      ReactDOM.render(
+        <ActionLink />,
+        document.getElementById('link')
+      )
+
+      class Toggle extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {isToggleOn: true};
+          // binding in the constructor
+          this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick() {
+          this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+          }))
+        }
+
+        render() {
+          return (
+            <button onClick={this.handleClick}>
+              {this.state.isToggleOn ? 'ON' : 'OFF'}
+            </button>
+          );
+        }
+      }
+
+
+      ReactDOM.render(
+        <Toggle />,
+        document.getElementById('toggle')
+      )
+
+      // LoggingButton -- public class fields syntax.  Avoid having to call bind() on this
+      class LoggingButton extends React.Component {
+        handleClick = () => {
+          console.log('this is ' : this);
+        }
+
+        render() {
+          return (
+            <button onClick = {this.handleClick}>
+              Click Me
+            </button>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <LoggingButton />,
+        document.getElementById('logging')
+      )
 
 
 
