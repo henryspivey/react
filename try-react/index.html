@@ -12,7 +12,8 @@
     <div id="time"></div>
     <div id="link"></div>
     <div id="toggle"></div>
-    <div id="logging"></div>    
+    <div id="logging"></div>
+    <div id="list"></div>
     <script type="text/babel">
 
       ReactDOM.render(
@@ -190,6 +191,28 @@
         document.getElementById('logging')
       )
 
+
+
+      class List extends React.Component {
+        constructor(props) {
+          super(props);
+          this.listItems = this.props.numbers.map( (number, index) =>
+            <li key={index}>{number}</li>
+          )
+        }
+
+
+        render () {
+          return (
+            <ul>{this.listItems}</ul>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <List numbers={[[1,2,3,4],[5],6,76,7]} />,
+        document.getElementById('list')
+      )
 
 
     </script>
