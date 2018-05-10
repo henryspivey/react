@@ -14,6 +14,7 @@
     <div id="toggle"></div>
     <div id="logging"></div>
     <div id="list"></div>
+        <div id="blog"></div>
     <script type="text/babel">
 
       ReactDOM.render(
@@ -213,6 +214,44 @@
         <List numbers={[[1,2,3,4],[5],6,76,7]} />,
         document.getElementById('list')
       )
+
+      function Blog(props) {
+        const sidebar = (
+          <ul>
+            {props.posts.map( (post) =>
+              <li key={post.id}>
+                {post.title}
+              </li>
+            )}
+          </ul>
+        );
+
+        const content = props.posts.map((post) =>
+          <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+          </div>
+        );
+        return (
+          <div>
+            {sidebar}
+            <hr />
+            {content}
+          </div>
+        );
+      }
+
+      const posts = [
+        {id: 1, title: "hello world", content: 'Welcome to learning react'},
+        {id: 2, title: 'test123', content: "testing"}
+      ];
+
+      ReactDOM.render(
+        <Blog posts = {posts} />,
+        document.getElementById('blog')
+      )
+
+
 
 
     </script>
