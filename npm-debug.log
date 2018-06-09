@@ -1,0 +1,689 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'node@latest' ]
+2 info using npm@3.10.8
+3 info using node@v7.0.0
+4 verbose config Skipping project config: /Users/spivotron/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData node@latest
+9 silly fetchNamedPackageData node
+10 silly mapToRegistry name node
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'node',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'node',
+13 silly mapToRegistry   name: 'node',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/node
+15 verbose request uri https://registry.npmjs.org/node
+16 verbose request no auth needed
+17 info attempt registry request try #1 at 5:39:44 PM
+18 verbose request id a8037124ee8ff210
+19 verbose etag "5ab3210e-57111"
+20 verbose lastModified Thu, 22 Mar 2018 3:20:46 GMT
+21 http request GET https://registry.npmjs.org/node
+22 http 304 https://registry.npmjs.org/node
+23 verbose headers { date: 'Thu, 29 Mar 2018 00:39:44 GMT',
+23 verbose headers   via: '1.1 varnish',
+23 verbose headers   'cache-control': 'max-age=300',
+23 verbose headers   etag: '"5ab3210e-57111"',
+23 verbose headers   age: '12429',
+23 verbose headers   connection: 'keep-alive',
+23 verbose headers   'x-served-by': 'cache-sjc3625-SJC',
+23 verbose headers   'x-cache': 'HIT',
+23 verbose headers   'x-cache-hits': '1',
+23 verbose headers   'x-timer': 'S1522283984.430911,VS0,VE1',
+23 verbose headers   vary: 'Accept-Encoding, Accept' }
+24 silly get cb [ 304,
+24 silly get   { date: 'Thu, 29 Mar 2018 00:39:44 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     'cache-control': 'max-age=300',
+24 silly get     etag: '"5ab3210e-57111"',
+24 silly get     age: '12429',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-sjc3625-SJC',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '1',
+24 silly get     'x-timer': 'S1522283984.430911,VS0,VE1',
+24 silly get     vary: 'Accept-Encoding, Accept' } ]
+25 verbose etag https://registry.npmjs.org/node from cache
+26 verbose get saving node to /Users/spivotron/.npm/registry.npmjs.org/node/.cache.json
+27 verbose correctMkdir /Users/spivotron/.npm correctMkdir not in flight; initializing
+28 silly install normalizeTree
+29 silly loadCurrentTree Finishing
+30 silly loadIdealTree Starting
+31 silly install loadIdealTree
+32 silly cloneCurrentTree Starting
+33 silly install cloneCurrentTreeToIdealTree
+34 silly cloneCurrentTree Finishing
+35 silly loadShrinkwrap Starting
+36 silly install loadShrinkwrap
+37 silly loadShrinkwrap Finishing
+38 silly loadAllDepsIntoIdealTree Starting
+39 silly install loadAllDepsIntoIdealTree
+40 silly resolveWithNewModule node@9.9.0 checking installable status
+41 silly cache add args [ 'node@latest', null ]
+42 verbose cache add spec node@latest
+43 silly cache add parsed spec Result {
+43 silly cache add   raw: 'node@latest',
+43 silly cache add   scope: null,
+43 silly cache add   escapedName: 'node',
+43 silly cache add   name: 'node',
+43 silly cache add   rawSpec: 'latest',
+43 silly cache add   spec: 'latest',
+43 silly cache add   type: 'tag' }
+44 silly addNamed node@latest
+45 verbose addNamed "latest" is being treated as a dist-tag for node
+46 info addNameTag [ 'node', 'latest' ]
+47 silly mapToRegistry name node
+48 silly mapToRegistry using default registry
+49 silly mapToRegistry registry https://registry.npmjs.org/
+50 silly mapToRegistry data Result {
+50 silly mapToRegistry   raw: 'node',
+50 silly mapToRegistry   scope: null,
+50 silly mapToRegistry   escapedName: 'node',
+50 silly mapToRegistry   name: 'node',
+50 silly mapToRegistry   rawSpec: '',
+50 silly mapToRegistry   spec: 'latest',
+50 silly mapToRegistry   type: 'tag' }
+51 silly mapToRegistry uri https://registry.npmjs.org/node
+52 verbose addNameTag registry:https://registry.npmjs.org/node not in flight; fetching
+53 verbose get https://registry.npmjs.org/node not expired, no request
+54 silly addNameTag next cb for node with tag latest
+55 silly addNamed node@9.9.0
+56 verbose addNamed "9.9.0" is a plain semver version for node
+57 silly cache afterAdd node@9.9.0
+58 verbose afterAdd /Users/spivotron/.npm/node/9.9.0/package/package.json not in flight; writing
+59 verbose correctMkdir /Users/spivotron/.npm correctMkdir not in flight; initializing
+60 verbose afterAdd /Users/spivotron/.npm/node/9.9.0/package/package.json written
+61 silly fetchNamedPackageData node-bin-setup
+62 silly mapToRegistry name node-bin-setup
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry data Result {
+65 silly mapToRegistry   raw: 'node-bin-setup',
+65 silly mapToRegistry   scope: null,
+65 silly mapToRegistry   escapedName: 'node-bin-setup',
+65 silly mapToRegistry   name: 'node-bin-setup',
+65 silly mapToRegistry   rawSpec: '',
+65 silly mapToRegistry   spec: 'latest',
+65 silly mapToRegistry   type: 'tag' }
+66 silly mapToRegistry uri https://registry.npmjs.org/node-bin-setup
+67 verbose request uri https://registry.npmjs.org/node-bin-setup
+68 verbose request no auth needed
+69 info attempt registry request try #1 at 5:39:44 PM
+70 verbose etag "5976bbea-1511"
+71 verbose lastModified Tue, 25 Jul 2017 3:32:58 GMT
+72 http request GET https://registry.npmjs.org/node-bin-setup
+73 http 304 https://registry.npmjs.org/node-bin-setup
+74 verbose headers { date: 'Thu, 29 Mar 2018 00:39:44 GMT',
+74 verbose headers   via: '1.1 varnish',
+74 verbose headers   'cache-control': 'max-age=300',
+74 verbose headers   etag: '"5976bbea-1511"',
+74 verbose headers   age: '8471',
+74 verbose headers   connection: 'keep-alive',
+74 verbose headers   'x-served-by': 'cache-sjc3625-SJC',
+74 verbose headers   'x-cache': 'HIT',
+74 verbose headers   'x-cache-hits': '1',
+74 verbose headers   'x-timer': 'S1522283985.650499,VS0,VE1',
+74 verbose headers   vary: 'Accept-Encoding, Accept' }
+75 silly get cb [ 304,
+75 silly get   { date: 'Thu, 29 Mar 2018 00:39:44 GMT',
+75 silly get     via: '1.1 varnish',
+75 silly get     'cache-control': 'max-age=300',
+75 silly get     etag: '"5976bbea-1511"',
+75 silly get     age: '8471',
+75 silly get     connection: 'keep-alive',
+75 silly get     'x-served-by': 'cache-sjc3625-SJC',
+75 silly get     'x-cache': 'HIT',
+75 silly get     'x-cache-hits': '1',
+75 silly get     'x-timer': 'S1522283985.650499,VS0,VE1',
+75 silly get     vary: 'Accept-Encoding, Accept' } ]
+76 verbose etag https://registry.npmjs.org/node-bin-setup from cache
+77 verbose get saving node-bin-setup to /Users/spivotron/.npm/registry.npmjs.org/node-bin-setup/.cache.json
+78 verbose correctMkdir /Users/spivotron/.npm correctMkdir not in flight; initializing
+79 silly resolveWithNewModule node-bin-setup@1.0.6 checking installable status
+80 silly cache add args [ 'node-bin-setup@^1.0.0', null ]
+81 verbose cache add spec node-bin-setup@^1.0.0
+82 silly cache add parsed spec Result {
+82 silly cache add   raw: 'node-bin-setup@^1.0.0',
+82 silly cache add   scope: null,
+82 silly cache add   escapedName: 'node-bin-setup',
+82 silly cache add   name: 'node-bin-setup',
+82 silly cache add   rawSpec: '^1.0.0',
+82 silly cache add   spec: '>=1.0.0 <2.0.0',
+82 silly cache add   type: 'range' }
+83 silly addNamed node-bin-setup@>=1.0.0 <2.0.0
+84 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for node-bin-setup
+85 silly addNameRange { name: 'node-bin-setup',
+85 silly addNameRange   range: '>=1.0.0 <2.0.0',
+85 silly addNameRange   hasData: false }
+86 silly mapToRegistry name node-bin-setup
+87 silly mapToRegistry using default registry
+88 silly mapToRegistry registry https://registry.npmjs.org/
+89 silly mapToRegistry data Result {
+89 silly mapToRegistry   raw: 'node-bin-setup',
+89 silly mapToRegistry   scope: null,
+89 silly mapToRegistry   escapedName: 'node-bin-setup',
+89 silly mapToRegistry   name: 'node-bin-setup',
+89 silly mapToRegistry   rawSpec: '',
+89 silly mapToRegistry   spec: 'latest',
+89 silly mapToRegistry   type: 'tag' }
+90 silly mapToRegistry uri https://registry.npmjs.org/node-bin-setup
+91 verbose addNameRange registry:https://registry.npmjs.org/node-bin-setup not in flight; fetching
+92 verbose get https://registry.npmjs.org/node-bin-setup not expired, no request
+93 silly addNameRange number 2 { name: 'node-bin-setup',
+93 silly addNameRange   range: '>=1.0.0 <2.0.0',
+93 silly addNameRange   hasData: true }
+94 silly addNameRange versions [ 'node-bin-setup',
+94 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.0.3', '1.0.4', '1.0.6' ] ]
+95 silly addNamed node-bin-setup@1.0.6
+96 verbose addNamed "1.0.6" is a plain semver version for node-bin-setup
+97 silly cache afterAdd node-bin-setup@1.0.6
+98 verbose afterAdd /Users/spivotron/.npm/node-bin-setup/1.0.6/package/package.json not in flight; writing
+99 verbose correctMkdir /Users/spivotron/.npm correctMkdir not in flight; initializing
+100 verbose afterAdd /Users/spivotron/.npm/node-bin-setup/1.0.6/package/package.json written
+101 silly loadAllDepsIntoIdealTree Finishing
+102 silly loadIdealTree Finishing
+103 silly currentTree spivotron
+103 silly currentTree └─┬ learnyounode@3.4.2
+103 silly currentTree   ├── after@0.8.1
+103 silly currentTree   ├─┬ bl@1.1.2
+103 silly currentTree   │ └─┬ readable-stream@2.0.5
+103 silly currentTree   │   ├── core-util-is@1.0.2
+103 silly currentTree   │   ├── inherits@2.0.1
+103 silly currentTree   │   ├── isarray@0.0.1
+103 silly currentTree   │   ├── process-nextick-args@1.0.6
+103 silly currentTree   │   ├── string_decoder@0.10.31
+103 silly currentTree   │   └── util-deprecate@1.0.2
+103 silly currentTree   ├── boganipsum@0.1.0
+103 silly currentTree   ├─┬ colors-tmpl@1.0.0
+103 silly currentTree   │ └── colors@1.0.3
+103 silly currentTree   ├─┬ combined-stream@1.0.5
+103 silly currentTree   │ └── delayed-stream@1.0.0
+103 silly currentTree   ├─┬ concat-stream@1.5.1
+103 silly currentTree   │ ├── inherits@2.0.1
+103 silly currentTree   │ ├─┬ readable-stream@2.0.5
+103 silly currentTree   │ │ ├── core-util-is@1.0.2
+103 silly currentTree   │ │ ├── isarray@0.0.1
+103 silly currentTree   │ │ ├── process-nextick-args@1.0.6
+103 silly currentTree   │ │ ├── string_decoder@0.10.31
+103 silly currentTree   │ │ └── util-deprecate@1.0.2
+103 silly currentTree   │ └── typedarray@0.0.6
+103 silly currentTree   ├── duplexer@0.1.1
+103 silly currentTree   ├─┬ hyperquest@1.3.0
+103 silly currentTree   │ ├─┬ duplexer2@0.0.2
+103 silly currentTree   │ │ └─┬ readable-stream@1.1.13
+103 silly currentTree   │ │   ├── core-util-is@1.0.2
+103 silly currentTree   │ │   ├── inherits@2.0.1
+103 silly currentTree   │ │   ├── isarray@0.0.1
+103 silly currentTree   │ │   └── string_decoder@0.10.31
+103 silly currentTree   │ └─┬ through2@0.6.5
+103 silly currentTree   │   ├─┬ readable-stream@1.0.33
+103 silly currentTree   │   │ ├── core-util-is@1.0.2
+103 silly currentTree   │   │ ├── inherits@2.0.1
+103 silly currentTree   │   │ ├── isarray@0.0.1
+103 silly currentTree   │   │ └── string_decoder@0.10.31
+103 silly currentTree   │   └── xtend@4.0.1
+103 silly currentTree   ├─┬ rimraf@2.5.2
+103 silly currentTree   │ └─┬ glob@7.0.3
+103 silly currentTree   │   ├─┬ inflight@1.0.4
+103 silly currentTree   │   │ └── wrappy@1.0.1
+103 silly currentTree   │   ├── inherits@2.0.1
+103 silly currentTree   │   ├─┬ minimatch@3.0.0
+103 silly currentTree   │   │ └─┬ brace-expansion@1.1.3
+103 silly currentTree   │   │   ├── balanced-match@0.3.0
+103 silly currentTree   │   │   └── concat-map@0.0.1
+103 silly currentTree   │   ├─┬ once@1.3.3
+103 silly currentTree   │   │ └── wrappy@1.0.1
+103 silly currentTree   │   └── path-is-absolute@1.0.0
+103 silly currentTree   ├── through@2.3.8
+103 silly currentTree   ├─┬ through2-map@2.0.0
+103 silly currentTree   │ └── xtend@4.0.1
+103 silly currentTree   ├─┬ through2@2.0.1
+103 silly currentTree   │ ├─┬ readable-stream@2.0.5
+103 silly currentTree   │ │ ├── core-util-is@1.0.2
+103 silly currentTree   │ │ ├── inherits@2.0.1
+103 silly currentTree   │ │ ├── isarray@0.0.1
+103 silly currentTree   │ │ ├── process-nextick-args@1.0.6
+103 silly currentTree   │ │ ├── string_decoder@0.10.31
+103 silly currentTree   │ │ └── util-deprecate@1.0.2
+103 silly currentTree   │ └── xtend@4.0.1
+103 silly currentTree   ├─┬ workshopper-adventure@4.4.6
+103 silly currentTree   │ ├─┬ chalk@1.1.1
+103 silly currentTree   │ │ ├─┬ ansi-styles@2.2.0
+103 silly currentTree   │ │ │ └── color-convert@1.0.0
+103 silly currentTree   │ │ ├── escape-string-regexp@1.0.5
+103 silly currentTree   │ │ ├─┬ has-ansi@2.0.0
+103 silly currentTree   │ │ │ └── ansi-regex@2.0.0
+103 silly currentTree   │ │ ├─┬ strip-ansi@3.0.1
+103 silly currentTree   │ │ │ └── ansi-regex@2.0.0
+103 silly currentTree   │ │ └── supports-color@2.0.0
+103 silly currentTree   │ ├─┬ commandico@2.0.2
+103 silly currentTree   │ │ ├── explicit@0.1.1
+103 silly currentTree   │ │ ├─┬ joi@6.10.1
+103 silly currentTree   │ │ │ ├── hoek@2.16.3
+103 silly currentTree   │ │ │ ├── isemail@1.2.0
+103 silly currentTree   │ │ │ ├── moment@2.12.0
+103 silly currentTree   │ │ │ └── topo@1.1.0
+103 silly currentTree   │ │ └── minimist@1.2.0
+103 silly currentTree   │ ├─┬ i18n-core@2.1.1
+103 silly currentTree   │ │ ├── mustache@0.8.2
+103 silly currentTree   │ │ └── sprintf@0.1.5
+103 silly currentTree   │ ├─┬ latest-version@2.0.0
+103 silly currentTree   │ │ └─┬ package-json@2.3.1
+103 silly currentTree   │ │   ├─┬ got@5.5.0
+103 silly currentTree   │ │   │ ├─┬ create-error-class@2.0.1
+103 silly currentTree   │ │   │ │ ├── capture-stack-trace@1.0.0
+103 silly currentTree   │ │   │ │ └── inherits@2.0.1
+103 silly currentTree   │ │   │ ├── duplexer2@0.1.4
+103 silly currentTree   │ │   │ ├── is-plain-obj@1.1.0
+103 silly currentTree   │ │   │ ├── is-redirect@1.0.0
+103 silly currentTree   │ │   │ ├── is-retry-allowed@1.0.0
+103 silly currentTree   │ │   │ ├── is-stream@1.0.1
+103 silly currentTree   │ │   │ ├── lowercase-keys@1.0.0
+103 silly currentTree   │ │   │ ├── node-status-codes@1.0.0
+103 silly currentTree   │ │   │ ├── object-assign@4.0.1
+103 silly currentTree   │ │   │ ├─┬ parse-json@2.2.0
+103 silly currentTree   │ │   │ │ └─┬ error-ex@1.3.0
+103 silly currentTree   │ │   │ │   └── is-arrayish@0.2.1
+103 silly currentTree   │ │   │ ├─┬ pinkie-promise@2.0.0
+103 silly currentTree   │ │   │ │ └── pinkie@2.0.4
+103 silly currentTree   │ │   │ ├── read-all-stream@3.1.0
+103 silly currentTree   │ │   │ ├─┬ readable-stream@2.0.5
+103 silly currentTree   │ │   │ │ ├── core-util-is@1.0.2
+103 silly currentTree   │ │   │ │ ├── inherits@2.0.1
+103 silly currentTree   │ │   │ │ ├── isarray@0.0.1
+103 silly currentTree   │ │   │ │ ├── process-nextick-args@1.0.6
+103 silly currentTree   │ │   │ │ ├── string_decoder@0.10.31
+103 silly currentTree   │ │   │ │ └── util-deprecate@1.0.2
+103 silly currentTree   │ │   │ ├── timed-out@2.0.0
+103 silly currentTree   │ │   │ ├── unzip-response@1.0.0
+103 silly currentTree   │ │   │ └─┬ url-parse-lax@1.0.0
+103 silly currentTree   │ │   │   └── prepend-http@1.0.3
+103 silly currentTree   │ │   ├─┬ rc@1.1.6
+103 silly currentTree   │ │   │ ├── deep-extend@0.4.1
+103 silly currentTree   │ │   │ ├── ini@1.3.4
+103 silly currentTree   │ │   │ ├── minimist@1.2.0
+103 silly currentTree   │ │   │ └── strip-json-comments@1.0.4
+103 silly currentTree   │ │   ├── registry-url@3.0.3
+103 silly currentTree   │ │   └── semver@5.1.0
+103 silly currentTree   │ ├─┬ mkdirp@0.5.1
+103 silly currentTree   │ │ └── minimist@0.0.8
+103 silly currentTree   │ ├─┬ msee@0.3.1
+103 silly currentTree   │ │ ├── ansi-regex@2.0.0
+103 silly currentTree   │ │ ├── ansicolors@0.3.2
+103 silly currentTree   │ │ ├─┬ cardinal@0.6.0
+103 silly currentTree   │ │ │ ├── ansicolors@0.2.1
+103 silly currentTree   │ │ │ └─┬ redeyed@0.6.0
+103 silly currentTree   │ │ │   └── esprima@2.7.2
+103 silly currentTree   │ │ ├── marked@0.3.5
+103 silly currentTree   │ │ ├─┬ nopt@3.0.6
+103 silly currentTree   │ │ │ └── abbrev@1.0.7
+103 silly currentTree   │ │ ├─┬ table-header@0.2.2
+103 silly currentTree   │ │ │ └── repeat-string@1.5.4
+103 silly currentTree   │ │ ├── text-table@0.2.0
+103 silly currentTree   │ │ ├─┬ wcstring@2.1.0
+103 silly currentTree   │ │ │ ├── varsize-string@2.2.0
+103 silly currentTree   │ │ │ └── wcsize@1.0.0
+103 silly currentTree   │ │ └── xtend@4.0.1
+103 silly currentTree   │ ├─┬ simple-terminal-menu@1.1.2
+103 silly currentTree   │ │ ├─┬ extended-terminal-menu@2.1.4
+103 silly currentTree   │ │ │ ├── charm_inheritance-fix@1.0.1
+103 silly currentTree   │ │ │ ├─┬ duplexer2@0.0.2
+103 silly currentTree   │ │ │ │ └─┬ readable-stream@1.1.13
+103 silly currentTree   │ │ │ │   ├── core-util-is@1.0.2
+103 silly currentTree   │ │ │ │   ├── isarray@0.0.1
+103 silly currentTree   │ │ │ │   └── string_decoder@0.10.31
+103 silly currentTree   │ │ │ ├── inherits@2.0.1
+103 silly currentTree   │ │ │ ├── resumer@0.0.0
+103 silly currentTree   │ │ │ └─┬ through2@0.6.5
+103 silly currentTree   │ │ │   └─┬ readable-stream@1.0.33
+103 silly currentTree   │ │ │     ├── core-util-is@1.0.2
+103 silly currentTree   │ │ │     ├── isarray@0.0.1
+103 silly currentTree   │ │ │     └── string_decoder@0.10.31
+103 silly currentTree   │ │ ├─┬ wcstring@2.1.0
+103 silly currentTree   │ │ │ ├── varsize-string@2.2.0
+103 silly currentTree   │ │ │ └── wcsize@1.0.0
+103 silly currentTree   │ │ └── xtend@4.0.1
+103 silly currentTree   │ ├── split@1.0.0
+103 silly currentTree   │ └─┬ string-to-stream@1.0.1
+103 silly currentTree   │   └── inherits@2.0.1
+103 silly currentTree   ├─┬ workshopper-exercise@2.6.1
+103 silly currentTree   │ ├─┬ chalk@1.1.1
+103 silly currentTree   │ │ ├─┬ ansi-styles@2.2.0
+103 silly currentTree   │ │ │ └── color-convert@1.0.0
+103 silly currentTree   │ │ ├── escape-string-regexp@1.0.5
+103 silly currentTree   │ │ ├─┬ has-ansi@2.0.0
+103 silly currentTree   │ │ │ └── ansi-regex@2.0.0
+103 silly currentTree   │ │ ├─┬ strip-ansi@3.0.1
+103 silly currentTree   │ │ │ └── ansi-regex@2.0.0
+103 silly currentTree   │ │ └── supports-color@2.0.0
+103 silly currentTree   │ ├─┬ i18n-core@2.1.1
+103 silly currentTree   │ │ ├── mustache@0.8.2
+103 silly currentTree   │ │ └── sprintf@0.1.5
+103 silly currentTree   │ ├── split@1.0.0
+103 silly currentTree   │ ├── tuple-stream@0.0.2
+103 silly currentTree   │ ├─┬ wcstring@2.1.0
+103 silly currentTree   │ │ ├── varsize-string@2.2.0
+103 silly currentTree   │ │ └── wcsize@1.0.0
+103 silly currentTree   │ └── xtend@4.0.1
+103 silly currentTree   └─┬ workshopper-wrappedexec@0.1.2
+103 silly currentTree     └─┬ xtend@2.1.2
+103 silly currentTree       └── object-keys@0.4.0
+104 silly idealTree spivotron
+104 silly idealTree ├─┬ learnyounode@3.4.2
+104 silly idealTree │ ├── after@0.8.1
+104 silly idealTree │ ├─┬ bl@1.1.2
+104 silly idealTree │ │ └─┬ readable-stream@2.0.5
+104 silly idealTree │ │   ├── core-util-is@1.0.2
+104 silly idealTree │ │   ├── inherits@2.0.1
+104 silly idealTree │ │   ├── isarray@0.0.1
+104 silly idealTree │ │   ├── process-nextick-args@1.0.6
+104 silly idealTree │ │   ├── string_decoder@0.10.31
+104 silly idealTree │ │   └── util-deprecate@1.0.2
+104 silly idealTree │ ├── boganipsum@0.1.0
+104 silly idealTree │ ├─┬ colors-tmpl@1.0.0
+104 silly idealTree │ │ └── colors@1.0.3
+104 silly idealTree │ ├─┬ combined-stream@1.0.5
+104 silly idealTree │ │ └── delayed-stream@1.0.0
+104 silly idealTree │ ├─┬ concat-stream@1.5.1
+104 silly idealTree │ │ ├── inherits@2.0.1
+104 silly idealTree │ │ ├─┬ readable-stream@2.0.5
+104 silly idealTree │ │ │ ├── core-util-is@1.0.2
+104 silly idealTree │ │ │ ├── isarray@0.0.1
+104 silly idealTree │ │ │ ├── process-nextick-args@1.0.6
+104 silly idealTree │ │ │ ├── string_decoder@0.10.31
+104 silly idealTree │ │ │ └── util-deprecate@1.0.2
+104 silly idealTree │ │ └── typedarray@0.0.6
+104 silly idealTree │ ├── duplexer@0.1.1
+104 silly idealTree │ ├─┬ hyperquest@1.3.0
+104 silly idealTree │ │ ├─┬ duplexer2@0.0.2
+104 silly idealTree │ │ │ └─┬ readable-stream@1.1.13
+104 silly idealTree │ │ │   ├── core-util-is@1.0.2
+104 silly idealTree │ │ │   ├── inherits@2.0.1
+104 silly idealTree │ │ │   ├── isarray@0.0.1
+104 silly idealTree │ │ │   └── string_decoder@0.10.31
+104 silly idealTree │ │ └─┬ through2@0.6.5
+104 silly idealTree │ │   ├─┬ readable-stream@1.0.33
+104 silly idealTree │ │   │ ├── core-util-is@1.0.2
+104 silly idealTree │ │   │ ├── inherits@2.0.1
+104 silly idealTree │ │   │ ├── isarray@0.0.1
+104 silly idealTree │ │   │ └── string_decoder@0.10.31
+104 silly idealTree │ │   └── xtend@4.0.1
+104 silly idealTree │ ├─┬ rimraf@2.5.2
+104 silly idealTree │ │ └─┬ glob@7.0.3
+104 silly idealTree │ │   ├─┬ inflight@1.0.4
+104 silly idealTree │ │   │ └── wrappy@1.0.1
+104 silly idealTree │ │   ├── inherits@2.0.1
+104 silly idealTree │ │   ├─┬ minimatch@3.0.0
+104 silly idealTree │ │   │ └─┬ brace-expansion@1.1.3
+104 silly idealTree │ │   │   ├── balanced-match@0.3.0
+104 silly idealTree │ │   │   └── concat-map@0.0.1
+104 silly idealTree │ │   ├─┬ once@1.3.3
+104 silly idealTree │ │   │ └── wrappy@1.0.1
+104 silly idealTree │ │   └── path-is-absolute@1.0.0
+104 silly idealTree │ ├── through@2.3.8
+104 silly idealTree │ ├─┬ through2-map@2.0.0
+104 silly idealTree │ │ └── xtend@4.0.1
+104 silly idealTree │ ├─┬ through2@2.0.1
+104 silly idealTree │ │ ├─┬ readable-stream@2.0.5
+104 silly idealTree │ │ │ ├── core-util-is@1.0.2
+104 silly idealTree │ │ │ ├── inherits@2.0.1
+104 silly idealTree │ │ │ ├── isarray@0.0.1
+104 silly idealTree │ │ │ ├── process-nextick-args@1.0.6
+104 silly idealTree │ │ │ ├── string_decoder@0.10.31
+104 silly idealTree │ │ │ └── util-deprecate@1.0.2
+104 silly idealTree │ │ └── xtend@4.0.1
+104 silly idealTree │ ├─┬ workshopper-adventure@4.4.6
+104 silly idealTree │ │ ├─┬ chalk@1.1.1
+104 silly idealTree │ │ │ ├─┬ ansi-styles@2.2.0
+104 silly idealTree │ │ │ │ └── color-convert@1.0.0
+104 silly idealTree │ │ │ ├── escape-string-regexp@1.0.5
+104 silly idealTree │ │ │ ├─┬ has-ansi@2.0.0
+104 silly idealTree │ │ │ │ └── ansi-regex@2.0.0
+104 silly idealTree │ │ │ ├─┬ strip-ansi@3.0.1
+104 silly idealTree │ │ │ │ └── ansi-regex@2.0.0
+104 silly idealTree │ │ │ └── supports-color@2.0.0
+104 silly idealTree │ │ ├─┬ commandico@2.0.2
+104 silly idealTree │ │ │ ├── explicit@0.1.1
+104 silly idealTree │ │ │ ├─┬ joi@6.10.1
+104 silly idealTree │ │ │ │ ├── hoek@2.16.3
+104 silly idealTree │ │ │ │ ├── isemail@1.2.0
+104 silly idealTree │ │ │ │ ├── moment@2.12.0
+104 silly idealTree │ │ │ │ └── topo@1.1.0
+104 silly idealTree │ │ │ └── minimist@1.2.0
+104 silly idealTree │ │ ├─┬ i18n-core@2.1.1
+104 silly idealTree │ │ │ ├── mustache@0.8.2
+104 silly idealTree │ │ │ └── sprintf@0.1.5
+104 silly idealTree │ │ ├─┬ latest-version@2.0.0
+104 silly idealTree │ │ │ └─┬ package-json@2.3.1
+104 silly idealTree │ │ │   ├─┬ got@5.5.0
+104 silly idealTree │ │ │   │ ├─┬ create-error-class@2.0.1
+104 silly idealTree │ │ │   │ │ ├── capture-stack-trace@1.0.0
+104 silly idealTree │ │ │   │ │ └── inherits@2.0.1
+104 silly idealTree │ │ │   │ ├── duplexer2@0.1.4
+104 silly idealTree │ │ │   │ ├── is-plain-obj@1.1.0
+104 silly idealTree │ │ │   │ ├── is-redirect@1.0.0
+104 silly idealTree │ │ │   │ ├── is-retry-allowed@1.0.0
+104 silly idealTree │ │ │   │ ├── is-stream@1.0.1
+104 silly idealTree │ │ │   │ ├── lowercase-keys@1.0.0
+104 silly idealTree │ │ │   │ ├── node-status-codes@1.0.0
+104 silly idealTree │ │ │   │ ├── object-assign@4.0.1
+104 silly idealTree │ │ │   │ ├─┬ parse-json@2.2.0
+104 silly idealTree │ │ │   │ │ └─┬ error-ex@1.3.0
+104 silly idealTree │ │ │   │ │   └── is-arrayish@0.2.1
+104 silly idealTree │ │ │   │ ├─┬ pinkie-promise@2.0.0
+104 silly idealTree │ │ │   │ │ └── pinkie@2.0.4
+104 silly idealTree │ │ │   │ ├── read-all-stream@3.1.0
+104 silly idealTree │ │ │   │ ├─┬ readable-stream@2.0.5
+104 silly idealTree │ │ │   │ │ ├── core-util-is@1.0.2
+104 silly idealTree │ │ │   │ │ ├── inherits@2.0.1
+104 silly idealTree │ │ │   │ │ ├── isarray@0.0.1
+104 silly idealTree │ │ │   │ │ ├── process-nextick-args@1.0.6
+104 silly idealTree │ │ │   │ │ ├── string_decoder@0.10.31
+104 silly idealTree │ │ │   │ │ └── util-deprecate@1.0.2
+104 silly idealTree │ │ │   │ ├── timed-out@2.0.0
+104 silly idealTree │ │ │   │ ├── unzip-response@1.0.0
+104 silly idealTree │ │ │   │ └─┬ url-parse-lax@1.0.0
+104 silly idealTree │ │ │   │   └── prepend-http@1.0.3
+104 silly idealTree │ │ │   ├─┬ rc@1.1.6
+104 silly idealTree │ │ │   │ ├── deep-extend@0.4.1
+104 silly idealTree │ │ │   │ ├── ini@1.3.4
+104 silly idealTree │ │ │   │ ├── minimist@1.2.0
+104 silly idealTree │ │ │   │ └── strip-json-comments@1.0.4
+104 silly idealTree │ │ │   ├── registry-url@3.0.3
+104 silly idealTree │ │ │   └── semver@5.1.0
+104 silly idealTree │ │ ├─┬ mkdirp@0.5.1
+104 silly idealTree │ │ │ └── minimist@0.0.8
+104 silly idealTree │ │ ├─┬ msee@0.3.1
+104 silly idealTree │ │ │ ├── ansi-regex@2.0.0
+104 silly idealTree │ │ │ ├── ansicolors@0.3.2
+104 silly idealTree │ │ │ ├─┬ cardinal@0.6.0
+104 silly idealTree │ │ │ │ ├── ansicolors@0.2.1
+104 silly idealTree │ │ │ │ └─┬ redeyed@0.6.0
+104 silly idealTree │ │ │ │   └── esprima@2.7.2
+104 silly idealTree │ │ │ ├── marked@0.3.5
+104 silly idealTree │ │ │ ├─┬ nopt@3.0.6
+104 silly idealTree │ │ │ │ └── abbrev@1.0.7
+104 silly idealTree │ │ │ ├─┬ table-header@0.2.2
+104 silly idealTree │ │ │ │ └── repeat-string@1.5.4
+104 silly idealTree │ │ │ ├── text-table@0.2.0
+104 silly idealTree │ │ │ ├─┬ wcstring@2.1.0
+104 silly idealTree │ │ │ │ ├── varsize-string@2.2.0
+104 silly idealTree │ │ │ │ └── wcsize@1.0.0
+104 silly idealTree │ │ │ └── xtend@4.0.1
+104 silly idealTree │ │ ├─┬ simple-terminal-menu@1.1.2
+104 silly idealTree │ │ │ ├─┬ extended-terminal-menu@2.1.4
+104 silly idealTree │ │ │ │ ├── charm_inheritance-fix@1.0.1
+104 silly idealTree │ │ │ │ ├─┬ duplexer2@0.0.2
+104 silly idealTree │ │ │ │ │ └─┬ readable-stream@1.1.13
+104 silly idealTree │ │ │ │ │   ├── core-util-is@1.0.2
+104 silly idealTree │ │ │ │ │   ├── isarray@0.0.1
+104 silly idealTree │ │ │ │ │   └── string_decoder@0.10.31
+104 silly idealTree │ │ │ │ ├── inherits@2.0.1
+104 silly idealTree │ │ │ │ ├── resumer@0.0.0
+104 silly idealTree │ │ │ │ └─┬ through2@0.6.5
+104 silly idealTree │ │ │ │   └─┬ readable-stream@1.0.33
+104 silly idealTree │ │ │ │     ├── core-util-is@1.0.2
+104 silly idealTree │ │ │ │     ├── isarray@0.0.1
+104 silly idealTree │ │ │ │     └── string_decoder@0.10.31
+104 silly idealTree │ │ │ ├─┬ wcstring@2.1.0
+104 silly idealTree │ │ │ │ ├── varsize-string@2.2.0
+104 silly idealTree │ │ │ │ └── wcsize@1.0.0
+104 silly idealTree │ │ │ └── xtend@4.0.1
+104 silly idealTree │ │ ├── split@1.0.0
+104 silly idealTree │ │ └─┬ string-to-stream@1.0.1
+104 silly idealTree │ │   └── inherits@2.0.1
+104 silly idealTree │ ├─┬ workshopper-exercise@2.6.1
+104 silly idealTree │ │ ├─┬ chalk@1.1.1
+104 silly idealTree │ │ │ ├─┬ ansi-styles@2.2.0
+104 silly idealTree │ │ │ │ └── color-convert@1.0.0
+104 silly idealTree │ │ │ ├── escape-string-regexp@1.0.5
+104 silly idealTree │ │ │ ├─┬ has-ansi@2.0.0
+104 silly idealTree │ │ │ │ └── ansi-regex@2.0.0
+104 silly idealTree │ │ │ ├─┬ strip-ansi@3.0.1
+104 silly idealTree │ │ │ │ └── ansi-regex@2.0.0
+104 silly idealTree │ │ │ └── supports-color@2.0.0
+104 silly idealTree │ │ ├─┬ i18n-core@2.1.1
+104 silly idealTree │ │ │ ├── mustache@0.8.2
+104 silly idealTree │ │ │ └── sprintf@0.1.5
+104 silly idealTree │ │ ├── split@1.0.0
+104 silly idealTree │ │ ├── tuple-stream@0.0.2
+104 silly idealTree │ │ ├─┬ wcstring@2.1.0
+104 silly idealTree │ │ │ ├── varsize-string@2.2.0
+104 silly idealTree │ │ │ └── wcsize@1.0.0
+104 silly idealTree │ │ └── xtend@4.0.1
+104 silly idealTree │ └─┬ workshopper-wrappedexec@0.1.2
+104 silly idealTree │   └─┬ xtend@2.1.2
+104 silly idealTree │     └── object-keys@0.4.0
+104 silly idealTree ├── node-bin-setup@1.0.6
+104 silly idealTree └── node@9.9.0
+105 silly generateActionsToTake Starting
+106 silly install generateActionsToTake
+107 silly generateActionsToTake Finishing
+108 silly diffTrees action count 2
+109 silly diffTrees add node-bin-setup@1.0.6
+110 silly diffTrees add node@9.9.0
+111 silly decomposeActions action count 16
+112 silly decomposeActions fetch node-bin-setup@1.0.6
+113 silly decomposeActions extract node-bin-setup@1.0.6
+114 silly decomposeActions test node-bin-setup@1.0.6
+115 silly decomposeActions preinstall node-bin-setup@1.0.6
+116 silly decomposeActions build node-bin-setup@1.0.6
+117 silly decomposeActions install node-bin-setup@1.0.6
+118 silly decomposeActions postinstall node-bin-setup@1.0.6
+119 silly decomposeActions finalize node-bin-setup@1.0.6
+120 silly decomposeActions fetch node@9.9.0
+121 silly decomposeActions extract node@9.9.0
+122 silly decomposeActions test node@9.9.0
+123 silly decomposeActions preinstall node@9.9.0
+124 silly decomposeActions build node@9.9.0
+125 silly decomposeActions install node@9.9.0
+126 silly decomposeActions postinstall node@9.9.0
+127 silly decomposeActions finalize node@9.9.0
+128 silly runTopLevelLifecycles Starting
+129 silly executeActions Starting
+130 silly install executeActions
+131 silly doSerial global-install 0
+132 silly doParallel fetch 2
+133 verbose correctMkdir /Users/spivotron/.npm/_locks correctMkdir not in flight; initializing
+134 verbose lock using /Users/spivotron/.npm/_locks/staging-c404fbfa62eb42dd.lock for /Users/spivotron/node_modules/.staging
+135 silly doParallel extract 2
+136 silly extract node-bin-setup@1.0.6
+137 silly extract node@9.9.0
+138 verbose unbuild node_modules/.staging/node-bin-setup-6fcf3b95
+139 verbose unbuild node_modules/.staging/node-639abdf8
+140 silly gentlyRm /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95 is being purged from base /Users/spivotron
+141 verbose gentlyRm don't care about contents; nuking /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95
+142 verbose tar unpack /Users/spivotron/.npm/node-bin-setup/1.0.6/package.tgz
+143 verbose tar unpacking to /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95
+144 silly gentlyRm /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95 is being purged
+145 verbose gentlyRm don't care about contents; nuking /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95
+146 silly gentlyRm /Users/spivotron/node_modules/.staging/node-639abdf8 is being purged from base /Users/spivotron
+147 verbose gentlyRm don't care about contents; nuking /Users/spivotron/node_modules/.staging/node-639abdf8
+148 silly gunzTarPerm modes [ '755', '644' ]
+149 verbose tar unpack /Users/spivotron/.npm/node/9.9.0/package.tgz
+150 verbose tar unpacking to /Users/spivotron/node_modules/.staging/node-639abdf8
+151 silly gentlyRm /Users/spivotron/node_modules/.staging/node-639abdf8 is being purged
+152 verbose gentlyRm don't care about contents; nuking /Users/spivotron/node_modules/.staging/node-639abdf8
+153 silly gunzTarPerm modes [ '755', '644' ]
+154 silly gunzTarPerm extractEntry package.json
+155 silly gunzTarPerm extractEntry package.json
+156 silly gunzTarPerm extractEntry index.js
+157 silly gunzTarPerm extractEntry installArchSpecificPackage.js
+158 silly gunzTarPerm extractEntry README.md
+159 silly gentlyRm /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95/node_modules is being purged
+160 verbose gentlyRm don't care about contents; nuking /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95/node_modules
+161 silly gentlyRm /Users/spivotron/node_modules/.staging/node-639abdf8/node_modules is being purged
+162 verbose gentlyRm don't care about contents; nuking /Users/spivotron/node_modules/.staging/node-639abdf8/node_modules
+163 silly doParallel preinstall 2
+164 silly preinstall node-bin-setup@1.0.6 /Users/spivotron/node_modules/.staging/node-bin-setup-6fcf3b95
+165 info lifecycle node-bin-setup@1.0.6~preinstall: node-bin-setup@1.0.6
+166 silly preinstall node@9.9.0 /Users/spivotron/node_modules/.staging/node-639abdf8
+167 info lifecycle node@9.9.0~preinstall: node@9.9.0
+168 silly lifecycle node-bin-setup@1.0.6~preinstall: no script for preinstall, continuing
+169 warn lifecycle node@9.9.0~preinstall: cannot run in wd %s %s (wd=%s) node@9.9.0 node installArchSpecificPackage /Users/spivotron/node_modules/.staging/node-639abdf8
+170 silly doReverseSerial remove 0
+171 silly doSerial move 0
+172 silly doSerial finalize 2
+173 silly finalize /Users/spivotron/node_modules/node-bin-setup
+174 silly finalize /Users/spivotron/node_modules/node
+175 silly doSerial build 2
+176 silly build node-bin-setup@1.0.6
+177 info linkStuff node-bin-setup@1.0.6
+178 silly linkStuff node-bin-setup@1.0.6 has /Users/spivotron/node_modules as its parent node_modules
+179 verbose linkBins node-bin-setup@1.0.6
+180 verbose linkMans node-bin-setup@1.0.6
+181 silly build node@9.9.0
+182 info linkStuff node@9.9.0
+183 silly linkStuff node@9.9.0 has /Users/spivotron/node_modules as its parent node_modules
+184 verbose linkBins node@9.9.0
+185 verbose link bins [ { node: 'bin/node' },
+185 verbose link bins   '/Users/spivotron/node_modules/.bin',
+185 verbose link bins   false ]
+186 verbose linkMans node@9.9.0
+187 verbose unlock done using /Users/spivotron/.npm/_locks/staging-c404fbfa62eb42dd.lock for /Users/spivotron/node_modules/.staging
+188 silly rollbackFailedOptional Starting
+189 silly rollbackFailedOptional Finishing
+190 silly runTopLevelLifecycles Finishing
+191 silly install printInstalled
+192 warn enoent ENOENT: no such file or directory, open '/Users/spivotron/package.json'
+193 verbose enoent ENOENT: no such file or directory, open '/Users/spivotron/package.json'
+193 verbose enoent This is most likely not a problem with npm itself
+193 verbose enoent and is related to npm not being able to find a file.
+194 warn spivotron No description
+195 verbose If you need help, you may report this error at:
+195 verbose     <https://github.com/npm/npm/issues>
+196 warn spivotron No repository field.
+197 verbose If you need help, you may report this error at:
+197 verbose     <https://github.com/npm/npm/issues>
+198 warn spivotron No README data
+199 verbose If you need help, you may report this error at:
+199 verbose     <https://github.com/npm/npm/issues>
+200 warn spivotron No license field.
+201 verbose If you need help, you may report this error at:
+201 verbose     <https://github.com/npm/npm/issues>
+202 verbose stack Error: ENOENT: no such file or directory, chmod '/Users/spivotron/node_modules/node/bin/node'
+203 verbose cwd /Users/spivotron/Desktop/react
+204 error Darwin 17.4.0
+205 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "node@latest"
+206 error node v7.0.0
+207 error npm  v3.10.8
+208 error path /Users/spivotron/node_modules/node/bin/node
+209 error code ENOENT
+210 error errno -2
+211 error syscall chmod
+212 error enoent ENOENT: no such file or directory, chmod '/Users/spivotron/node_modules/node/bin/node'
+213 error enoent ENOENT: no such file or directory, chmod '/Users/spivotron/node_modules/node/bin/node'
+213 error enoent This is most likely not a problem with npm itself
+213 error enoent and is related to npm not being able to find a file.
+214 verbose exit [ -2, true ]
