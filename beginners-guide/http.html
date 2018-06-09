@@ -1,0 +1,48 @@
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<script src="https://unpkg.com/vanilla-tilt@1.4.1/dist/vanilla-tilt.min.js"></script>
+<script src="https://unpkg.com/axios@0.16.2/dist/axios.min.js"></script>
+
+<script type="text/babel">
+  class UserCompany extends React.Component {
+    state = {company: undefined}
+    componentDidMount() {
+      axios({
+        url : 'https://api.github.com/graphql',
+        method: 'post',
+        data: {
+          query: `{
+            user(login: "${this.props.username}") {
+              company 
+            }
+          }`,
+        },
+        headers: {Authorization: `bearer 4185a60b36a6d2fed5050cae992b19c65ae32fda`}
+      }).then(response => {
+        this.setState({company: response.data.data.user.company})
+      })
+    }
+    render() {
+      return this.state.company || 'Unknown'
+    }
+  }
+
+  const username = 'kentcdodds'
+  const element = (
+    <div>
+      <div>
+        {`@${username} works at `}
+        <UserCompany username ={username} />
+        
+      </div>
+    </div>
+  )
+
+  ReactDOM.render(
+    <App />,
+      document.getElementById('root'),
+  )
+
+</script>
