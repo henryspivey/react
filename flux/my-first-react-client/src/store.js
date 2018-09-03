@@ -1,5 +1,7 @@
+// Starting on flux
 export const increment = state => ({...state, n:state.n+1});
 export const decrement = state => ({...state, n:state.n-1});
+
 
 export function createStore(initialState) {
   let currentState = initialState;
@@ -7,5 +9,7 @@ export function createStore(initialState) {
   const dispatch = action => {
     currentState  = action(currentState);
   };
+
   return {getState, dispatch};
+
 }
