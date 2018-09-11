@@ -8,10 +8,11 @@ class App extends Component {
   // any change in state will automatically invoke re render
   state = {
     persons: [
-      {name: 'Max', age: 28},
-      {name: 'Henry', age: 24},
+      {id: 1, name: 'Max', age: 28},
+      {id: 2, name: 'Henry', age: 24},
     ],
-    otherStuff: 'some other stuff'
+    otherStuff: 'some other stuff',
+    showPersons: false
   }
 
   switchNameHandler = (newName) => {
@@ -24,15 +25,37 @@ class App extends Component {
     ]})  // merges new state with the old one. LEAVES OTHER STUFF UNTOUCHED
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id
+    })
+    const person = {
+      ...this.state.persons[personIndex]
+    }
+
+    person.name = event.target.value
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
     this.setState({
-      persons: [
-        {name: 'Max', age: 28},
-        {name: event.target.value, age: 24},
-      ]
+      persons: persons
     })
   }
 
+  togglePersonsHandler = () => {
+    // assures this returns to the class
+    const doesShow = this.state.showPersons;
+    this.setState({
+
+      showPersons: !doesShow
+    })
+  }
+
+  deletePersonHandler = (personIndex) => {
+    // const persons = this.state.persons.slice(); // copies the og array and returns a new one
+    const persons = [...this.state.persons]
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons});
+  }
 
   render() {
 
@@ -44,14 +67,26 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let persons = null;
+    // preferred way of outputting conditional content
+    if (this.state.showPersons) {
+      persons = (
+          <div>
+            {this.state.persons.map((person, index) => {
+              return <Person key={person.id} changed={(event) => this.nameChangedHandler(event, person.id)} click={this.deletePersonHandler.bind(index)} name={person.name} age={person.age} />
+            })}
+
+          </div>
+      );
+    }
+
     return (
       <div className="App">
         <h1>Hi Im a react app </h1>
-                              // passes a reference IMPORTANT don't use ()
-        <button style={style} onClick={() => {this.switchNameHandler("test1")}}>Switch Name</button>
-        // <Person name="Henry" age="4">My hobbies: Cooking</Person>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} click={this.switchNameHandler.bind(this, "test2")}/>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} changed={this.nameChangedHandler.bind(this)}/>
+
+        <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        {persons}
+
       </div>
       // gets compiled to return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'hello!!!!'));
     )

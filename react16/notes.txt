@@ -116,3 +116,9 @@ const nums = [1,2,3];
 const doubleNumArray = numbers.map((num) => {
   return num * 2
 }) // returns a completely new array
+
+
+// Compoonetns
+// maintainable
+// Reusable
+// Configurable
