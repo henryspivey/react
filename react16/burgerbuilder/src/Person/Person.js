@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 import './Person.css';
 //  best way to make a component, clear about what they do, don't manipulate app state, dynamic
 const person = (props) => {

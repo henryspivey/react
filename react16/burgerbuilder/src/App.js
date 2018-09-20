@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
 import logo from './logo.svg';
 import Person from './Person/Person'; // can leave off the .js
 import './App.css';
+
 
 
 class App extends Component {
@@ -66,7 +68,11 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightGreen',
+        color: 'black'
+      }
     };
 
     let persons = null;
@@ -75,20 +81,29 @@ class App extends Component {
       persons = (
           <div>
             {this.state.persons.map((person, index) => {
-              return <Person key={person.id} changed={(event) => this.nameChangedHandler(event, person.id)} click={this.switchNameHandler.bind(this, 'Hanky')} name={person.name} age={person.age} />
+              return <Person key={person.id} changed={(event) => this.nameChangedHandler(event, person.id)} click={this.deletePersonHandler.bind(this)} name={person.name} age={person.age} />
             })}
 
           </div>
       );
 
       style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
-    let classes = ['red', 'bold'].join(' ')
-
+    let classes = []
+    if (this.state.persons.length <= 1) {
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1 ) {
+      classes.push('bold');
+    }
     return (
       <div className="App">
-        <h1 className={classes}>Hi Im a react app </h1>
+        <h1 className={classes.join(' ')}>Hi Im a react app </h1>
 
         <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
@@ -99,4 +114,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App); // higher order component
