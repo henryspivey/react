@@ -32,8 +32,9 @@ class App extends Component {
     const person = {
       ...this.state.persons[personIndex]
     }
-
+    // copy person we're typing in
     person.name = event.target.value
+    // reconstruct the persons obj
     const persons = [...this.state.persons];
     persons[personIndex] = person;
     this.setState({
@@ -60,7 +61,8 @@ class App extends Component {
   render() {
 
     const style= {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: '#ffffff',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -73,16 +75,20 @@ class App extends Component {
       persons = (
           <div>
             {this.state.persons.map((person, index) => {
-              return <Person key={person.id} changed={(event) => this.nameChangedHandler(event, person.id)} click={this.deletePersonHandler.bind(index)} name={person.name} age={person.age} />
+              return <Person key={person.id} changed={(event) => this.nameChangedHandler(event, person.id)} click={this.switchNameHandler.bind(this, 'Hanky')} name={person.name} age={person.age} />
             })}
 
           </div>
       );
+
+      style.backgroundColor = 'red';
     }
+
+    let classes = ['red', 'bold'].join(' ')
 
     return (
       <div className="App">
-        <h1>Hi Im a react app </h1>
+        <h1 className={classes}>Hi Im a react app </h1>
 
         <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
