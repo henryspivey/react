@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import Radium, {StyleRoot} from 'radium';
 import logo from './logo.svg';
 import Person from './Person/Person'; // can leave off the .js
-import './App.css';
+
+import classes from './App.css';
 
 
 
@@ -62,15 +63,7 @@ class App extends Component {
 
   render() {
 
-    const style= {
-      backgroundColor: 'green',
-      color: '#ffffff',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
-
+    let btnClass = ''
     let persons = null;
     // preferred way of outputting conditional content
     if (this.state.showPersons) {
@@ -83,26 +76,22 @@ class App extends Component {
           </div>
       );
 
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
+      btnClass = classes.Red;
     }
 
-    let classes = []
+    let assignedClasses = []
     if (this.state.persons.length <= 1) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if (this.state.persons.length <= 1 ) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
     return (
 
-      <div className="App">
-        <h1 className={classes.join(' ')}>Hi Im a react app </h1>
+      <div className={classes.App}>
+        <h1 className={assignedClasses.join(' ')}>Hi Im a react app </h1>
 
-        <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
 
       </div>
