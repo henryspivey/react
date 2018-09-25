@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+// import Radium, {StyleRoot} from 'radium';
 import logo from './logo.svg';
 import Person from './Person/Person'; // can leave off the .js
 import './App.css';
@@ -68,11 +68,7 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightGreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     };
 
     let persons = null;
@@ -102,6 +98,7 @@ class App extends Component {
       classes.push('bold');
     }
     return (
+
       <div className="App">
         <h1 className={classes.join(' ')}>Hi Im a react app </h1>
 
@@ -109,9 +106,10 @@ class App extends Component {
         {persons}
 
       </div>
+
       // gets compiled to return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'hello!!!!'));
     )
   }
 }
 
-export default Radium(App); // higher order component
+export default App; // higher order component
