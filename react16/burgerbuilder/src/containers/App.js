@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 // import Radium, {StyleRoot} from 'radium';
 import logo from './logo.svg';
-import Person from './Person/Person'; // can leave off the .js
-
+// import Person from '../components/Person/Person'; // can leave off the .js
+import Persons from '../components/Person/Person';
+import Cockpit from '../components/Cockpit/Cockpit';
 import classes from './App.css';
+// import ErrorBoundary from '.././ErrorBoundary/ErrorBoundary';
 
 
 
@@ -58,40 +60,29 @@ class App extends Component {
     // const persons = this.state.persons.slice(); // copies the og array and returns a new one
     const persons = [...this.state.persons]
     persons.splice(personIndex, 1);
-    this.setState({persons: persons});
+    if (persons) {
+        this.setState({persons: persons});
+    }
+
   }
 
   render() {
-
-    let btnClass = ''
     let persons = null;
     // preferred way of outputting conditional content
     if (this.state.showPersons) {
       persons = (
           <div>
-            {this.state.persons.map((person, index) => {
-              return <Person key={person.id} changed={(event) => this.nameChangedHandler(event, person.id)} click={this.deletePersonHandler.bind(this)} name={person.name} age={person.age} />
-            })}
-
+            <Persons persons={this.state.persons}
+            clicked={() => this.deletePersonHandler}
+            changed={this.nameChangedHandler}
+            />
           </div>
       );
-
-      btnClass = classes.Red;
-    }
-
-    let assignedClasses = []
-    if (this.state.persons.length <= 1) {
-      assignedClasses.push(classes.red);
-    }
-    if (this.state.persons.length <= 1 ) {
-      assignedClasses.push(classes.bold);
     }
     return (
 
       <div className={classes.App}>
-        <h1 className={assignedClasses.join(' ')}>Hi Im a react app </h1>
-
-        <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <Cockpit appTitle={this.props.title} showPersons = {this.state.showPersons} persons={this.state.persons} clicked={this.togglePersonsHandler}/>
         {persons}
 
       </div>

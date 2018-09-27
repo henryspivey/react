@@ -7,9 +7,14 @@ const person = (props) => {
   // state is like props, but passed from inside
   // transformed to React.createElement so we need to import React
 
+  // const rnd = Math.random();
+  // if (rnd > 0.7) {
+  //   throw new Error('Something went wrong');
+  // }
+
   return (
     <div className={classes.Person}>
-      <p onClick={props.click}>My name is {props.name} and I am {props.age}</p>
+      <p onClick={props.clicked}>My name is {props.name} and I am {props.age}</p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name}/>
     </div>
