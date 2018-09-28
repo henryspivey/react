@@ -1,24 +1,18 @@
-import React from 'react';
+import React , {Component} from 'react';
 
 import classes from './Person.css';
 //  best way to make a component, clear about what they do, don't manipulate app state, dynamic
-const person = (props) => {
-  // props is an obj, passed from outside
-  // state is like props, but passed from inside
-  // transformed to React.createElement so we need to import React
 
-  // const rnd = Math.random();
-  // if (rnd > 0.7) {
-  //   throw new Error('Something went wrong');
-  // }
-
-  return (
-    <div className={classes.Person}>
-      <p onClick={props.clicked}>My name is {props.name} and I am {props.age}</p>
-      <p>{props.children}</p>
-      <input type="text" onChange={props.changed} value={props.name}/>
-    </div>
-  )
+class Person extends Component {
+  render() {
+    return (
+      <div className={classes.Person}>
+        <p onClick={this.props.clicked}>My name is {this.props.name} and I am {this.props.age}</p>
+        <p>{this.props.children}</p>
+        <input type="text" onChange={this.props.changed} value={this.props.name}/>
+      </div>
+    )
+  }
 }
 
-export default person;
+export default Person;

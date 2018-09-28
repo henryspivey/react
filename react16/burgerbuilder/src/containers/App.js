@@ -10,8 +10,10 @@ import classes from './App.css';
 
 
 class App extends Component {
-  // any change in state will automatically invoke re render
-  state = {
+
+  constructor(props) {
+    super(props);
+    this.state = {
     persons: [
       {id: 1, name: 'Max', age: 28},
       {id: 2, name: 'Henry', age: 24},
@@ -19,6 +21,23 @@ class App extends Component {
     otherStuff: 'some other stuff',
     showPersons: false
   }
+  }
+
+  componentWillMount(){
+    console.log('app.js component will mount')
+  }
+  componentDidMount(){
+    console.log('app.js component did mount')
+  }
+  // any change in state will automatically invoke re render
+  // state = {
+  //   persons: [
+  //     {id: 1, name: 'Max', age: 28},
+  //     {id: 2, name: 'Henry', age: 24},
+  //   ],
+  //   otherStuff: 'some other stuff',
+  //   showPersons: false
+  // }
 
   switchNameHandler = (newName) => {
     // console.log('Was clicked');
@@ -66,7 +85,8 @@ class App extends Component {
 
   }
 
-  render() {
+  render() { // every staeful component needs a render method
+
     let persons = null;
     // preferred way of outputting conditional content
     if (this.state.showPersons) {
@@ -82,6 +102,7 @@ class App extends Component {
     return (
 
       <div className={classes.App}>
+        // <button onClick={() => {this.setState({showPersons: true})}}>Show Persons </button>
         <Cockpit appTitle={this.props.title} showPersons = {this.state.showPersons} persons={this.state.persons} clicked={this.togglePersonsHandler}/>
         {persons}
 
