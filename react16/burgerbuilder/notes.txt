@@ -1,0 +1,11 @@
+planning a react app
+1. Component Tree/ Component
+  - use design
+2. Application State (data)
+3. Components vs containers
+  - stateful / stateless
+  -
+
+
+First
+enable css modules by ejecting -> scoped to component and not global
