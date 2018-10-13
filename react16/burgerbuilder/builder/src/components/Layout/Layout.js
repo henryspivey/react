@@ -13,7 +13,7 @@ class Layout extends Component {
   }
   openSideDrawer = () => {
     this.setState((prevState) => {
-      return {showSideDrawer:!this.state.showSideDrawer}
+      return {showSideDrawer:!prevState.showSideDrawer}
     });
   }
   render() {
