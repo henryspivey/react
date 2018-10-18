@@ -1,46 +1,66 @@
 // https://www.kirupa.com/react/simple_todo_app_react.htm
 
 import React, {Component} from 'react';
+import List from './List';
 
-class TodoList extends Component {
+class TodoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {inputTodo: '', items:[]};
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			items: []
-		}
-		this.addItem = (e) => {
-			if(this._inputElement.value !== "") {
-				var newItem = {
-					text: this._inputElement.value,
-					key: Date.now()
-				}
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-				this.setState((prevState) => {
-					return {
-						items: prevState.items.concat(newItem)
-					};
-				});
-				this._inputElement.value = "";
-			}
-			console.log(this.state.items);
-			e.preventDefault();
-		}
-		
-	}
+		// this.addItem = () => {
+	// 	if(this.state.inputValue !== "") {
+	// 		var newItem = {
+	// 			text: this.state.inputValue,
+	// 			key: Date.now()
+	// 		}
+	//
+	// 		this.setState((prevState) => {
+	// 			return {
+	// 				items: prevState.items.concat(newItem),
+	// 				inputValue: ""
+	// 			};
+	// 		});
+	//
+	// 	}
+	// 	console.log(this.state.items);
+	//
+	// }
 
-	render() {
-		return (
-			<div className="todoListMain">
-				<div className="header">
-					<form onSubmit={this.addItem}>
-						<input placeholder="enter task" ref={ (a) => this._inputElement = a} />
-						<button type="submit">add</button>
-					</form>
-				</div>
+  handleChange(event) {
+    this.setState({inputTodo: event.target.value});
+  }
+
+  handleSubmit(event) {
+    console.log(this.state.inputTodo);
+		this.setState((prevState) => {
+			return {items: prevState.items.concat(this.state.inputTodo)}
+		})
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+			<div>
+	      <form onSubmit={this.handleSubmit}>
+	        <label>
+	          Name:
+	          <input type="text" value={this.state.value} onChange={this.handleChange} />
+	        </label>
+	        <input type="submit" value="Submit" />
+	      </form>
+				{this.state.items}
+				<List />
 			</div>
-		)
-	}
+    );
+  }
 }
+
+/* component here for list
+ <List items={this.state.items} */
 
 export default TodoList;
