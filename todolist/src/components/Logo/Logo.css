@@ -1,0 +1,18 @@
+.LogoList {
+  display: block;
+  width: 100%;
+  padding: 0;
+
+}
+.logo {
+  display: block;
+  animation: App-logo-spin infinite 20s linear;
+  float: left;
+  height: 80px;
+  width: 80px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
