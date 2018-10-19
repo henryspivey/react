@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import List from '../ListComponent/List';
 import Layout from '../Layout/Layout';
-import Header from '../Header/Header';
+
 
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {inputTodo: '', items:[], disabled: true, todoListName: ""};
+    this.state = {inputTodo: '', items:[], disabled: true};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,10 +20,7 @@ class TodoList extends React.Component {
   }
 
   handleSubmit(event) {
-    if (!this.state.todoListName) {
-      const name = window.prompt("Enter a name for your todo list");
-      this.setState({todoListName: name});
-    }
+    
     if (!this.state.inputTodo) {
       alert('Enter some text foo!')
       this.setState({disabled: true});
@@ -40,7 +37,7 @@ class TodoList extends React.Component {
   render() {
     return (
 			<div>
-        <Header name={this.state.todoListName}/>
+
 	      <form onSubmit={this.handleSubmit}>
 	        <label>
 	          What needs to be done:
