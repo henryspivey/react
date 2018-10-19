@@ -5,7 +5,9 @@ const logo = (props) => {
 
   const logos = [...Array(parseInt(props.times))].map((logoKey, index) => {
     return (
-        <li key={index} className="logo"><img src={reactLogo} alt="Logo"  style={{height: props.height}} /></li>
+      <li key={index} className="logo" style={parseInt(props.times)> 1 ? {float:'left'} : {float:'none'}}>
+        <img src={reactLogo} alt="Logo"  style={{height: props.height}} />
+      </li>
     )
   })
   return (
@@ -13,6 +15,5 @@ const logo = (props) => {
   );
 
 };
-
 
 export default logo;

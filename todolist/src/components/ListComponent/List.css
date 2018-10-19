@@ -1,0 +1,6 @@
+.allTodos {
+  display: flex;
+  flex-flow:column;
+  flex:1;
+  text-align: left; 
+}

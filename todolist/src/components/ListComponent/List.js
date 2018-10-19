@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './List.css';
 
 const List = (props) => {
 
@@ -10,7 +10,7 @@ const List = (props) => {
   })
 
   return (
-    <ul>
+    <ul className="allTodos">
       {listitems}
     </ul>
   )

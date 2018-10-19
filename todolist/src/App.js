@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Logo times="1"/>  
+        <Logo times="4"/>
 
         <TodoList />
       </div>
