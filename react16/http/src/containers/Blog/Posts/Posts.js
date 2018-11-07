@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from '../../../axios';
 import Post from '../../../components/Post/Post';
 import './Posts.css';
-import Filter from '../Filters/Filter';
+import {DropDownFilter, TextFilter} from '../Filters/Filter';
 import Aux from '../../../components/HOC/Aux/Aux';
 
 
@@ -11,7 +11,8 @@ class Posts extends Component {
       posts: [],
       selectedPostId: null,
       userIds: [],
-      selectUserId: null
+      selectUserId: null,
+      query: ''
     }
 
   postSelectedHandler = (id) => {
@@ -20,7 +21,7 @@ class Posts extends Component {
   componentDidMount() {
     const allIds = [];
     axios.get('http://jsonplaceholder.typicode.com/posts').then(response => {
-      const posts = response.data.slice(0,11);
+      const posts = response.data;
 
       const updatedPosts = posts.map(post => {
         allIds.push(post.userId);
@@ -37,22 +38,33 @@ class Posts extends Component {
   handleChange = (event) => {
     console.log(event.target.value);
     this.setState({selectUserId: event.target.value})
+  }
 
+  handleQueryChange = (event) => {
+      console.log(event.target.value);
+      this.setState({query: event.target.value})
   }
 
   render() {
     let posts = this.state.posts.map(post => {
-       return <Post key={post.id} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
+      return <Post key={post.id} userId={post.userId} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
    });
-    if(this.state.selectUserId) {
-
-       posts = posts.filter(post => post.userId === this.state.selectUserId)
+    if(this.state.selectUserId && !isNaN(this.state.selectUserId)) {
+       posts = this.state.posts.filter(post => post.userId == this.state.selectUserId).map(post => {
+         return <Post key={post.id} userId={post.userId} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
+       })
+    }
+    if(this.state.query) {
+       posts = this.state.posts.filter(post => post.title.search(this.state.query) > -1).map(post => {
+         return <Post key={post.id} userId={post.userId} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
+       })
     }
 
     return (
       <Aux>
         <form onSubmit={this.handleSubmit}>
-          <Filter ids={this.state.userIds} handleChange={this.handleChange}/>
+          <DropDownFilter label="User ID " isDropdown="true" ids={this.state.userIds} handleChange={this.handleChange}/>
+          <TextFilter label="Search Terms " placeholder="Enter your search terms here" handleChange={this.handleQueryChange}/>
         </form>
         <section className="Posts">
             {posts}
