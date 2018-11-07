@@ -45,6 +45,7 @@ class Posts extends Component {
        return <Post key={post.id} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
    });
     if(this.state.selectUserId) {
+
        posts = posts.filter(post => post.userId === this.state.selectUserId)
     }
 
