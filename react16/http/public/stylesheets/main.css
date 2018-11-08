@@ -1,0 +1,88 @@
+/* line 2, ../../src/assets/sass/main.scss */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 10, ../../src/assets/sass/main.scss */
+body, html {
+  height: 100%;
+  background-color: skyblue;
+}
+
+/* line 1, ../../src/assets/sass/filters.scss */
+.custom-form {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
+/* line 1, ../../src/assets/sass/fullpost.scss */
+.FullPost {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  text-align: center;
+}
+
+/* line 13, ../../src/assets/sass/fullpost.scss */
+.Edit label {
+  display: block;
+  color: grey;
+}
+
+/* line 18, ../../src/assets/sass/fullpost.scss */
+.Edit button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  color: #fa923f;
+}
+
+/* line 26, ../../src/assets/sass/fullpost.scss */
+.Edit button:hover,
+.Edit button:active {
+  color: #521751;
+}
+
+/* line 31, ../../src/assets/sass/fullpost.scss */
+.Edit button.Delete {
+  color: red;
+}
+
+/* line 35, ../../src/assets/sass/fullpost.scss */
+.Edit button.Delete:hover,
+.Edit button.Delete:active {
+  color: darkred;
+}
+
+/* line 2, ../../src/assets/sass/post.scss */
+.Post {
+  width: 250px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  margin: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
+/* line 14, ../../src/assets/sass/post.scss */
+.Post:hover,
+.Post:active {
+  background-color: #F03861;
+}
+
+/* line 19, ../../src/assets/sass/post.scss */
+.Author {
+  margin: 16px 0;
+  color: #ccc;
+}

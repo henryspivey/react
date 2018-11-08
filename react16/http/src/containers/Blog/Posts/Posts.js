@@ -4,6 +4,7 @@ import Post from '../../../components/Post/Post';
 import './Posts.css';
 import {DropDownFilter, TextFilter} from '../Filters/Filter';
 import Aux from '../../../components/HOC/Aux/Aux';
+import {Link} from 'react-router-dom';
 
 
 class Posts extends Component {
@@ -16,7 +17,8 @@ class Posts extends Component {
     }
 
   postSelectedHandler = (id) => {
-    this.setState({selectedPostId: id})
+    this.props.history.push({pathname: '/'+id});
+    // this.setState({selectedPostId: id})
   }
   componentDidMount() {
     const allIds = [];
@@ -47,7 +49,11 @@ class Posts extends Component {
 
   render() {
     let posts = this.state.posts.map(post => {
-      return <Post key={post.id} userId={post.userId} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
+      return (
+        // <Link to={'/' + post.id} key={post.id}>
+          <Post key={post.id} userId={post.userId} author={post.author} title={post.title} clicked={()=> this.postSelectedHandler(post.id)} />
+        // </Link>
+      )
    });
     if(this.state.selectUserId && !isNaN(this.state.selectUserId)) {
        posts = this.state.posts.filter(post => post.userId == this.state.selectUserId).map(post => {
@@ -62,7 +68,7 @@ class Posts extends Component {
 
     return (
       <Aux>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="custom-form">
           <DropDownFilter label="User ID " isDropdown="true" ids={this.state.userIds} handleChange={this.handleChange}/>
           <TextFilter label="Search Terms " placeholder="Enter your search terms here" handleChange={this.handleQueryChange}/>
         </form>

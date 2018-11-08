@@ -12,15 +12,14 @@ const DropDownFilter = (props) => {
     return (
       <label>
         {props.label}
-        <select onChange={props.handleChange}>
-          {options}
-        </select>
+
+          <select onChange={props.handleChange}>
+            {options}
+          </select>
+      
       </label>
     )
 }
-
-
-
 
 const TextFilter = (props) => {
   return (

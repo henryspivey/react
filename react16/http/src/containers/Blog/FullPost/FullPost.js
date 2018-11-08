@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './FullPost.css';
+
 
 class FullPost extends Component {
 
@@ -8,11 +8,12 @@ class FullPost extends Component {
       loadedPost : null
     }
 
-    componentDidUpdate() {
-      if (this.props.id) {
-          if(!this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id)) {
+    componentDidMount() {
+      console.log(this.props);
+      if (this.props.match.params.id) {
+          if(!this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.match.params.id)) {
             // only make the request for new posts
-            axios.get('/posts/'+this.props.id).then(response => {
+            axios.get('/posts/'+this.props.match.params.id).then(response => {
                 this.setState({loadedPost: response.data});
             })
           }
@@ -34,7 +35,7 @@ class FullPost extends Component {
         }
         if (this.state.loadedPost) {
           post = (
-              <div className="FullPost">
+              <div className="Post">
                   <h1>{this.state.loadedPost.title}</h1>
                   <p>{this.state.loadedPost.body}</p>
                   <div className="Edit">
