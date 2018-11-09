@@ -1,6 +1,11 @@
 /* line 2, ../../src/assets/sass/post.scss */
-.Post {
+.Posts .Post {
   width: 250px;
+}
+
+/* line 5, ../../src/assets/sass/post.scss */
+.Post {
+  width: 100%;
   padding: 16px;
   text-align: center;
   border: 1px solid #eee;
@@ -11,13 +16,13 @@
   background: #f9f9f9;
 }
 
-/* line 14, ../../src/assets/sass/post.scss */
+/* line 17, ../../src/assets/sass/post.scss */
 .Post:hover,
 .Post:active {
   background-color: #F03861;
 }
 
-/* line 19, ../../src/assets/sass/post.scss */
+/* line 22, ../../src/assets/sass/post.scss */
 .Author {
   margin: 16px 0;
   color: #ccc;

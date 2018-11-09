@@ -28,6 +28,10 @@ class FullPost extends Component {
       })
     }
 
+    componentDidUpdate() {
+
+    }
+
     render () {
         let post = <p>Please select a Post!</p>;
         if (this.props.id) {

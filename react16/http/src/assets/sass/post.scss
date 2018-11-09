@@ -1,6 +1,9 @@
 @import "_variables";
+.Posts .Post {
+  width: 250px;
+}
 .Post {
-    width: 250px;
+    width: 100%;
     padding: 16px;
     text-align: center;
     border: 1px solid #eee;
