@@ -122,3 +122,5 @@ const doubleNumArray = numbers.map((num) => {
 // maintainable
 // Reusable
 // Configurable
+
+lazy loading (aka code splitting) -> loading only what you need
