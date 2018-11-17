@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import Button from '../../../components/UI/Button/Button'
-import classes from './ContactData.css'
 
 class ContactData extends Component {
-
   state = {
     name: '',
     email: '',
@@ -12,24 +9,19 @@ class ContactData extends Component {
       postalCode: ''
     }
   }
-
-  render(){
+  render() {
     return (
-      <div className={classes.ContactData}>
-        <h4>Enter your contact data: </h4>
+      <div>
+        <h4> Enter your Contact Data</h4>
         <form>
-          <input className={classes.Input} type="text" name="name" placeholder="Your name"/>
-          <input className={classes.Input} type="email" name="email" placeholder="Your email"/>
-          <input className={classes.Input} type="text" name="street" placeholder="Your street"/>
-          <input className={classes.Input} type="text" name="postcode" placeholder="Your postcode"/>
-          <Button btnType="Success">ORDER</Button>
+            <input type="text" name="name" placeholder="Your Name" />
+            <input type="email" name="email" placeholder="Your Email" />
+            <input type="text" name="street" placeholder="Your Street" />
+            <input type="text" name="postalCode" placeholder="Your postal code" />
         </form>
       </div>
-      )
+    )
   }
-
-
 }
-
 
 export default ContactData;
