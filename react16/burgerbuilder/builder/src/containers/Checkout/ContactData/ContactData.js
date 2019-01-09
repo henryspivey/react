@@ -4,6 +4,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './ContactData.css';
 import axios from '../../../hoc/axios-orders';
 import Input from '../../../components/UI/Input/Input';
+import {connect} from 'react-redux';
 class ContactData extends Component {
   state = {
     orderForm : {
@@ -96,8 +97,8 @@ class ContactData extends Component {
       formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value; // what the user entered
     }
     const order = {
-      ingredients: this.props.ingredients,
-      price: this.props.price,      
+      ingredients: this.props.ings,
+      price: this.props.price,
       orderData: formData
     }
     axios.post('/orders.json', order).
@@ -156,9 +157,9 @@ class ContactData extends Component {
     }
     let form = (
         <form onSubmit={this.orderHandler}>
-           
+
             {formElements.map(formElement => (
-              <Input 
+              <Input
                 key={formElement.id}
                 elementType={formElement.config.elementType}
                 elementConfig={formElement.config.elementConfig}
@@ -167,10 +168,10 @@ class ContactData extends Component {
                 touched={formElement.config.touched}
                 value={formElement.config.value} changed={(e)=> this.inputChangedHandler(e,formElement.id)}
                 />
-            ))}    
+            ))}
             <Button btnType="Success" disabled={!this.state.formIsValid} clicked={this.orderHandler}> Order </Button>
         </form>);
-    if (this.state.loading) 
+    if (this.state.loading)
     {
       form = <Spinner />
     }
@@ -183,4 +184,11 @@ class ContactData extends Component {
   }
 }
 
-export default ContactData;
+const mapStateToProps = state => {
+  return {
+    ings: state.ingredients,
+    price: state.totalPrice
+  }
+}
+
+export default connect(mapStateToProps)(ContactData);
